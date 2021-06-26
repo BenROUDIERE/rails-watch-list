@@ -1,0 +1,15 @@
+<div class="container-md">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a movie to your <%= @list.name %> List</h3>
+          <%= simple_form_for [@list, @bookmark] do |f| %>
+            <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+            <%= f.association :movie, collection: Movie.all.order(:title), prompt: 'Select a movie' %>
+            <%= f.submit 'Add movie', class: 'btn btn-success' %>
+            <%= link_to "Back on My Lists", lists_path,class: 'btn btn-success'  %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
