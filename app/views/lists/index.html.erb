@@ -13,10 +13,10 @@
   <div class="d-flex align-items justify-content-around mb-3">
     <h3 class="mb-0">🎬 My Lists</h3>
   </div>
-  <div class="row">
+  <div class="row-index d-flex align-items justify-content-around mb-3">
     <% @lists.each do |list| %>
       <div class="co-12 colsm-6 col-md-4 mb-3">
-        <%= link_to list_path(list), class:' card text-decoration-none' do %>
+        <%= link_to list_path(list), class:'card text-decoration-none' do %>
           <%= list.name %>
         <% end %>
        </div>
