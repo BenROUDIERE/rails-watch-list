@@ -6,28 +6,25 @@
 </div>
 
 <br>
-<div class="container my-5">
-  <div class="card" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <% @list.movies.each do |movie| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <% @list.movies.each do |movie| %>
+        <div class="card" style="max-width: 720px;">
           <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
           <%= image_tag movie.poster_url, alt: movie.title, class:'movie-img rounded-top img-fluid'%>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <% @list.movies.each do |movie| %>
-            <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-            <h5 class="card-title"><strong><%= movie.title %> <span class="text-muted font-weight-normal"></span></strong></h5>
-            <p class="card-text"><small class="text-grey"><%= movie.overview %></small>.</p>
-            <i class="fas fa-quote-left mr-2 text-black"></i><small class="flex-grow-1 text-black"><%= bookmark.comment %></small> <i class="fas fa-quote-right"></i>
-            <div>
-              <small class="text-right flex-shrink-0"><%= link_to 'remove this movie 🗑', bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title"><strong><%= movie.title %> <span class="text-muted font-weight-normal"></span></strong></h5>
+                <p class="card-text"><small class="text-grey"><%= movie.overview %></small>.</p>
+                  <i class="fas fa-quote-left mr-2 text-black"></i><small class="flex-grow-1 text-black"><%= bookmark.comment %></small> <i class="fas fa-quote-right"></i>
+                <div>
+                  <small class="text-right flex-shrink-0"><%= link_to 'remove this movie 🗑', bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
+                </div>
             </div>
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
