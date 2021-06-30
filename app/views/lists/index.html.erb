@@ -1,18 +1,26 @@
 <div class="text-center">
-  <h1>My 🤘movies🤘 List</h1>
-  <div class="container-md">
-    <div class="d-flex align-items justify-content-between mb-3">
-      <h3 class="mb-0">🎬 My Lists</h3>
-      <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-success' %>
-    </div>
-    <div class="row">
-      <% @lists.each do |list| %>
-        <div class="co-12 colsm-6 col-md-4 mb-3">
-          <%= link_to list_path(list), class:'text-decoration-none' do %>
-              <%= list.name %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-literary-minimalist-film-film-banner-poster-image_188522.jpg);">
+  <div class="container">
+    <h1>
+      <span id="banner-typed-text"></span>
+    </h1>
+    <br>
+    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-success' %>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="d-flex align-items justify-content-around mb-3">
+    <h3 class="mb-0">🎬 My Lists</h3>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 colsm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:' card text-decoration-none' do %>
+          <%= list.name %>
+        <% end %>
+       </div>
+    <% end %>
+  </div>
+</div>
 </div>

@@ -1,0 +1,31 @@
+.card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  flex-grow: 1;
+  display: grid;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.movie-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card-body{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
