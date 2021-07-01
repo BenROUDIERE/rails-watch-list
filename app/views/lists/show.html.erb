@@ -18,6 +18,9 @@
                 <i class="fas fa-quote-left mr-2 text-black"></i><small class="flex-grow-1 text-black"><%= bookmark.comment %></small> <i class="fas fa-quote-right"></i>
               <div>
                 <small class="text-right flex-shrink-0"><%= link_to 'remove this movie 🗑', bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
+                <button id="sweet-alert-demo" class="btn btn-danger">Delete <%= movie.title %></button>
+                <%= link_to "", bookmark_path(bookmark), method: :delete, id: "delete-link", class: "hidden" %>
+                <button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
               </div>
           </div>
         </div>
